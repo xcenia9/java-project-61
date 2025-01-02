@@ -5,3 +5,9 @@
 
 Asciinema game Even  https://asciinema.org/connect/fe049cf5-d7ed-40cb-b7ab-56a729030bc0
 
+Asciinema game Calc  https://asciinema.org/a/8f4FStL2kL5RExfOi6P2xOlHY
+
+Asciinema game GSD  https://asciinema.org/a/QUsbyCUbB5XEf2j5SRqjuNm5H
+
+
+
