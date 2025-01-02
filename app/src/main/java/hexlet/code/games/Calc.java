@@ -10,18 +10,12 @@ public class Calc {
         int randomOperator = (int) (Math.random() * operators.length);
         String operator = operators[randomOperator];
         String question = (a + " " + operator + " " + b);
-        int result = 0;
-        switch (operator) {
-            case "+":
-                result = a + b;
-                break;
-            case "-":
-                result  = a - b;
-                break;
-            case "*":
-                result  = a * b;
-                break;
-        }
+        int result = switch (operator) {
+            case "+" -> a + b;
+            case "-" -> a - b;
+            case "*" -> a * b;
+            default -> 0;
+        };
         String correctAnswer = "" + result;
         return new String[]{question, correctAnswer};
     }
