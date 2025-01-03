@@ -6,7 +6,7 @@ public class Prime {
     private static String[] getQuestionAndAnswer() {
         int number = (int) (Math.random() * 100);
         String question = number + "";
-        String correctAnswer = "";
+        String correctAnswer;
 
         if (number <= 1) {
             correctAnswer = "no";
