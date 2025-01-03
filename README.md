@@ -9,5 +9,7 @@ Asciinema game Calc  https://asciinema.org/a/8f4FStL2kL5RExfOi6P2xOlHY
 
 Asciinema game GSD  https://asciinema.org/a/QUsbyCUbB5XEf2j5SRqjuNm5H
 
+Asciinema game Progression    https://asciinema.org/a/BqEjtO8IaG8Iltjy5p7laY1M2
+
 
 
