@@ -11,5 +11,6 @@ Asciinema game GSD  https://asciinema.org/a/QUsbyCUbB5XEf2j5SRqjuNm5H
 
 Asciinema game Progression    https://asciinema.org/a/BqEjtO8IaG8Iltjy5p7laY1M2
 
+Asciinema game Prime https://asciinema.org/a/V8xdwrnOp6jK4goyTu9JUjhkW
 
 
