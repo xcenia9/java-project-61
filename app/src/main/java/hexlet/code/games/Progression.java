@@ -17,18 +17,12 @@ public class Progression {
         }
         int randomIndex = Utils.getRandomNumber(0, randomLength - 1);
         String correctAnswer = String.valueOf(numbers[randomIndex]);
+        numbers[randomIndex] = -1;
+        String question = String.join(" ", java.util.Arrays.stream(numbers)
+                .mapToObj(num -> num == -1 ? ".." : String.valueOf(num))
+                .toArray(String[]::new));
 
-        StringBuilder questionBuilder = new StringBuilder();
-        for (int i = 0; i < randomLength; i++) {
-            if (i == randomIndex) {
-                questionBuilder.append(".. ");
-            } else {
-                questionBuilder.append(numbers[i]).append(" ");
-            }
-        }
-
-        String question = questionBuilder.toString().trim();
-        return new String[] {question, correctAnswer};
+        return new String[] {question.trim(), correctAnswer};
     }
 
     public static void gameProgression() {

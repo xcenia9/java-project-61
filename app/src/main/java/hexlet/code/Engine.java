@@ -28,7 +28,8 @@ public class Engine {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'");
                 System.out.println("Let's try again, " + name + "!");
                 break;
-            } System.out.println("Correct!");
+            }
+            System.out.println("Correct!");
             count++;
         }
         if (count == COUNT_OF_ROUNDS) {
