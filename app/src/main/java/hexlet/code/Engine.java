@@ -1,13 +1,10 @@
 package hexlet.code;
 
 import java.util.Scanner;
+import java.util.function.Supplier;
 
 public class Engine {
     private static final int COUNT_OF_ROUNDS = 3;
-
-    public static int getCountOfRounds() {
-        return COUNT_OF_ROUNDS;
-    }
 
     public static void gameEngine(String exercise, String[][] questionAndAnswer) {
         Scanner sc = new Scanner(System.in);
@@ -35,5 +32,12 @@ public class Engine {
         if (count == COUNT_OF_ROUNDS) {
             System.out.println("Congratulations, " + name + "!");
         }
+    }
+    public static void runGame(String exercise, Supplier<String[]> questionAndAnswerSupplier) {
+        String[][] questionAndAnswer = new String[COUNT_OF_ROUNDS][2];
+        for (int i = 0; i < COUNT_OF_ROUNDS; i++) {
+            questionAndAnswer[i] = questionAndAnswerSupplier.get();
+        }
+        gameEngine(exercise, questionAndAnswer);
     }
 }

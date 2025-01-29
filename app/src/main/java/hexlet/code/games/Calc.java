@@ -26,12 +26,8 @@ public class Calc {
         };
     }
 
-    public static void gameCalc() {
+    public static void playCalc() {
         String exercise = "What is the result of the expression?";
-        String[][] questionAndAnswer = new String[Engine.getCountOfRounds()][2];
-        for (int i = 0; i < Engine.getCountOfRounds(); i++) {
-            questionAndAnswer[i] = getQuestionAndAnswer();
-        }
-        Engine.gameEngine(exercise, questionAndAnswer);
+        Engine.runGame(exercise, Calc::getQuestionAndAnswer);
     }
 }

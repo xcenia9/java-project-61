@@ -36,12 +36,9 @@ public class Prime {
         return true;
     }
 
-    public static void gamePrime() {
+    public static void playPrime() {
         String exercise = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] questionAndAnswer = new String[Engine.getCountOfRounds()][2];
-        for (int i = 0; i < Engine.getCountOfRounds(); i++) {
-            questionAndAnswer[i] = getQuestionAndAnswer();
-        }
-        Engine.gameEngine(exercise, questionAndAnswer);
+        Engine.runGame(exercise, Prime::getQuestionAndAnswer);
     }
+
 }

@@ -7,14 +7,22 @@ public class Progression {
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
 
+    private static int[] generateProgression(int length, int start, int step) {
+        int[] numbers = new int[length];
+        numbers[0] = start;
+        for (int i = 1; i < length; i++) {
+            numbers[i] = numbers[i - 1] + step;
+        }
+        return numbers;
+    }
+
     private static String[] getQuestionAndAnswer() {
         int randomLength = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
-        int[] numbers = new int[randomLength];
-        int diff = Utils.getRandomNumber();
-        numbers[0] = Utils.getRandomNumber();
-        for (int i = 1; i < randomLength; i++) {
-            numbers[i] = numbers[i - 1] + diff;
-        }
+        int step = Utils.getRandomNumber();
+        int startNumber = Utils.getRandomNumber();
+
+        int[] numbers = generateProgression(randomLength, startNumber, step);
+
         int randomIndex = Utils.getRandomNumber(0, randomLength - 1);
         String correctAnswer = String.valueOf(numbers[randomIndex]);
         numbers[randomIndex] = -1;
@@ -25,12 +33,8 @@ public class Progression {
         return new String[] {question.trim(), correctAnswer};
     }
 
-    public static void gameProgression() {
+    public static void playProgression() {
         String exercise = "What number is missing in the progression?";
-        String[][] questionAndAnswer = new String[Engine.getCountOfRounds()][2];
-        for (int i = 0; i < Engine.getCountOfRounds(); i++) {
-            questionAndAnswer[i] = getQuestionAndAnswer();
-        }
-        Engine.gameEngine(exercise, questionAndAnswer);
+        Engine.runGame(exercise, Progression::getQuestionAndAnswer);
     }
 }

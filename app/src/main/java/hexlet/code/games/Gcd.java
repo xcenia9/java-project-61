@@ -17,12 +17,8 @@ public class Gcd {
         return new String[]{question, correctAnswer};
     }
 
-    public static void gameGcd() {
+    public static void playGcd() {
         String exercise = "Find the greatest common divisor of given numbers.";
-        String[][] questionAndAnswer = new String[Engine.getCountOfRounds()][2];
-        for (int i = 0; i < Engine.getCountOfRounds(); i++) {
-            questionAndAnswer[i] = getQuestionAndAnswer();
-        }
-        Engine.gameEngine(exercise, questionAndAnswer);
+        Engine.runGame(exercise, Gcd::getQuestionAndAnswer);
     }
 }
