@@ -13,7 +13,7 @@ public class Gcd {
             b = a % b;
             a = check;
         }
-        String correctAnswer = a + "";
+        String correctAnswer = Integer.toString(a);
         return new String[]{question, correctAnswer};
     }
 

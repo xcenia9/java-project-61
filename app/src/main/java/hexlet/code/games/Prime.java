@@ -9,25 +9,21 @@ public class Prime {
 
     private static String[] getQuestionAndAnswer() {
         int number = Utils.getRandomNumber();
-        String question = number + "";
-        String correctAnswer = getTheCorrectAnswer(number);
+        String question = Integer.toString(number); // Формируем вопрос
+        String correctAnswer = isPrime(number) ? "yes" : "no"; // Определяем правильный ответ
         return new String[]{question, correctAnswer};
     }
 
-    private static String getTheCorrectAnswer(int number) {
+    private static boolean isPrime(int number) {
         if (number <= 1) {
-            return "no";
+            return false;
         }
         if (number == 2) {
-            return "yes";
+            return true;
         }
         if (number % 2 == 0) {
-            return "no";
+            return false;
         }
-        return isPrime(number) ? "yes" : "no";
-    }
-
-    private static boolean isPrime(int number) {
         for (int i = FIRST_ODD_NUMBER; i <= Math.sqrt(number); i += 2) {
             if (number % i == 0) {
                 return false;

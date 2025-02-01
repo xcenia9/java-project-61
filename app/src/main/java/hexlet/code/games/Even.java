@@ -11,7 +11,7 @@ public class Even {
 
     private static String[] getQuestionAndAnswer() {
         int randomNumber = Utils.getRandomNumber();
-        String question = randomNumber + "";
+        String question = Integer.toString(randomNumber);
         String correctAnswer = parityCheck(randomNumber) ? "yes" : "no";
         return new String[]{question, correctAnswer};
     }

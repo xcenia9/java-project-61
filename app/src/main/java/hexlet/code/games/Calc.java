@@ -13,7 +13,7 @@ public class Calc {
         String question = (a + " " + operator + " " + b);
         int result = calculate(a, b, operator);
 
-        String correctAnswer = "" + result;
+        String correctAnswer = Integer.toString(result);
         return new String[]{question, correctAnswer};
     }
 
