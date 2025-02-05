@@ -7,11 +7,16 @@ public class Prime {
 
     private static final int FIRST_ODD_NUMBER = 3;
 
-    private static String[] getQuestionAndAnswer() {
-        int number = Utils.getRandomNumber();
-        String question = Integer.toString(number); // Формируем вопрос
-        String correctAnswer = isPrime(number) ? "yes" : "no"; // Определяем правильный ответ
-        return new String[]{question, correctAnswer};
+    private static String[][] getQuestionAndAnswer() {
+        String[][] pair = new String[Engine.COUNT_OF_ROUNDS][2];
+        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
+            int number = Utils.getRandomNumber();
+            String question = Integer.toString(number);
+            String correctAnswer = isPrime(number) ? "yes" : "no";
+            pair[i][0] = question;
+            pair[i][1] = correctAnswer;
+        }
+        return pair;
     }
 
     private static boolean isPrime(int number) {
@@ -34,7 +39,8 @@ public class Prime {
 
     public static void playPrime() {
         String exercise = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.runGame(exercise, Prime::getQuestionAndAnswer);
+        String[][] questionAndAnswerPairs = getQuestionAndAnswer();
+        Engine.runGame(exercise, questionAndAnswerPairs);
     }
 
 }
